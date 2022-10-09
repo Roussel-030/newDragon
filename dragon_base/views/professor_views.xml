@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+         <record model="ir.actions.act_window" id="res_partner_action">
+            <field name="name">Professor</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="professor_vue_partner" name="Professor" parent="student_menu" action="res_partner_action"/>
+
+    </data>
+</odoo>
