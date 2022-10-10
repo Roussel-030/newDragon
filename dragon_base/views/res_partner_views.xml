@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+
+        <record id="res_partner_tree_inherit" model="ir.ui.view">
+            <field name="name">res.partner.tree.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='email']" position="after">
+                    <field name="nif"/>
+                    <field name="stat"/>
+                    <field name="rcs"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <field name="nif" />
+                    <field name="stat"/>
+                    <field name="rcs"/>
+                </xpath>
+            </field>
+        </record>
+
+         <record model="ir.actions.act_window" id="res_partner_action">
+            <field name="name">Professor</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="professor_vue_partner" name="Professor" parent="student_menu" action="res_partner_action"/>
+
+    </data>
+</odoo>
